@@ -5,7 +5,7 @@ export class PizzaDataBase extends BaseDatabase {
   private static TABLE_NAME_1 = 'Pizzas';
   private static TABLE_NAME_2 = 'Orders';
 
-  public async getPizza(): Promise<Pizza> {
+  public async getPizza(): Promise<Pizza[]> {
     const result = await this.getConnection()
       .select('*')
       .from(PizzaDataBase.TABLE_NAME_1);
